@@ -1,8 +1,15 @@
 export enum AppRoute {
   Home = '/',
-  DetailedQuest = '/quest/:id',
+  DetailedQuest = '/detailed-quest/:id',
   Contacts = '/contacts',
   NotFound = '/notfound',
+}
+
+export const LinkToQuestById = ((id: number): string => `/detailed-quest/${id}`);
+
+export enum APIRoute {
+  Quests = '/quests',
+  Orders = '/orders',
 }
 
 export const APIRouteQuestById = ((id: number): string => `/quests/${id}`);

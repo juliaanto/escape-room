@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { Link } from 'components/common/common';
 
 const Tabs = styled.ul`
@@ -60,14 +61,6 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
   &:hover span {
     border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
   }
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      span {
-        border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
-      }
-    `}
 `;
 
 const TabTitle = styled.span`

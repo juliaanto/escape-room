@@ -9,3 +9,5 @@ export type Quest = {
   peopleCount: number[],
   duration: number,
 }
+
+export type Quests = Quest[];

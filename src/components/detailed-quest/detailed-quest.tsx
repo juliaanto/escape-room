@@ -14,7 +14,7 @@ import { Quest } from 'types/quest';
 import { api } from 'services/api';
 import { useParams } from 'react-router';
 
-const DetailedQuest = () => {
+function DetailedQuest(): JSX.Element {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
   const [quest, setQuest] = useState<Quest>();
 
