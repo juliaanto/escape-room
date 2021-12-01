@@ -1,6 +1,11 @@
 import * as S from './page-subtext.styled';
 
-const PageSubtext = ({ children, ...props }) => (
+import { FC } from "react";
+
+interface Props {
+}
+
+const PageSubtext: FC<Props> = ({ children, ...props }) => (
   <S.PageSubtext {...props}>{children}</S.PageSubtext>
 );
 

@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { MainLayout } from 'components/common/common';
+import * as S from './detailed-quest.styled';
+
+import { BookingModal } from './components/components';
 import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
-import * as S from './detailed-quest.styled';
-import { BookingModal } from './components/components';
+import { MainLayout } from '../common/common';
+import { useState } from 'react';
 
 const DetailedQuest = () => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -53,7 +54,9 @@ const DetailedQuest = () => {
               помочь другим, разобраться что произошло и выбраться из комнаты?
             </S.QuestDescription>
 
-            <S.QuestBookingBtn onClick={onBookingBtnClick}>
+            <S.QuestBookingBtn
+              onClick={onBookingBtnClick}
+            >
               Забронировать
             </S.QuestBookingBtn>
           </S.PageDescription>

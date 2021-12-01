@@ -1,6 +1,11 @@
 import * as S from './container.styled';
 
-const Container = ({ children, ...props }) => (
+import { FC } from "react";
+
+interface Props {
+}
+
+const Container: FC<Props> = ({ children, ...props }) => (
   <S.Container {...props}>{children}</S.Container>
 );
 

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
 import { Container, Link as RouterLink } from 'components/common/common';
+import styled, { css } from 'styled-components';
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -75,17 +75,19 @@ const Link = styled(RouterLink)`
 
   color: ${({ theme }) => theme.color.whiteSmoke};
 
-  ${({ $isActiveLink }) =>
-    $isActiveLink &&
-    css`
-      color: ${({ theme }) => theme.color.tangerine};
-    `}
 
-  &:focus,
-  &:hover {
-    color: ${({ theme }) => theme.color.tangerine};
-  }
 `;
+
+// ${({ $isActiveLink }) =>
+// $isActiveLink &&
+// css`
+//   color: ${({ theme }) => theme.color.tangerine};
+// `}
+
+// &:focus,
+// &:hover {
+// color: ${({ theme }) => theme.color.tangerine};
+// }
 
 const Phone = styled.a`
   margin-top: 17px;

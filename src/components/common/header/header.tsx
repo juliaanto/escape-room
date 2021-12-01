@@ -1,5 +1,6 @@
-import logo from 'assets/img/logo.svg';
 import * as S from './header.styled';
+
+import logo from 'assets/img/logo.svg';
 
 const Header = () => (
   <S.StyledHeader>
@@ -11,7 +12,8 @@ const Header = () => (
       <S.Navigation>
         <S.Links>
           <S.LinkItem>
-            <S.Link $isActiveLink to="/">
+            {/* <S.Link $isActiveLink to="/"> */}
+            <S.Link to="/">
               Квесты
             </S.Link>
           </S.LinkItem>
