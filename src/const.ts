@@ -14,26 +14,35 @@ export enum APIRoute {
 
 export const APIRouteQuestById = ((id: number): string => `/quests/${id}`);
 
+export enum AppQuestTypes {
+  AllQuests = 'Все квесты',
+  Adventures = 'Приключения',
+  Horror = 'Ужасы',
+  Mystic = 'Мистика',
+  Detective = 'Детектив',
+  SciFi = 'Sci-fi',
+}
+
 export const questTypes = [
   {
     typeFromServer: 'adventures',
-    typeInApp: 'Приключения',
+    typeInApp: AppQuestTypes.Adventures,
   },
   {
     typeFromServer: 'horror',
-    typeInApp: 'Ужасы',
+    typeInApp: AppQuestTypes.Horror,
   },
   {
     typeFromServer: 'mystic',
-    typeInApp: 'Мистика',
+    typeInApp: AppQuestTypes.Mystic,
   },
   {
     typeFromServer: 'detective',
-    typeInApp: 'Детектив',
+    typeInApp: AppQuestTypes.Detective,
   },
   {
     typeFromServer: 'sci-fi',
-    typeInApp: 'Sci-fi',
+    typeInApp: AppQuestTypes.SciFi,
   },
 ]
 

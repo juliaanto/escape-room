@@ -3,15 +3,13 @@ import * as S from './quests-catalog.styled';
 import { useEffect, useState } from 'react';
 
 import { APIRoute } from 'const';
-import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
-import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
-import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
-import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
-import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
-import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import QuestItem from '../quest-item/quest-item';
 import { Quests } from 'types/quest';
+import Tabs from'../tabs/tabs';
 import { api } from 'services/api';
+import { getAllQuestTypes } from 'utils/quests';
+
+;
 
 function QuestsCatalog(): JSX.Element {
   const [quests, setQuests] = useState<Quests>([]);
@@ -20,53 +18,9 @@ function QuestsCatalog(): JSX.Element {
     api.get<Quests>(APIRoute.Quests).then((response) => setQuests(response.data))
   }, [setQuests]);
 
-  console.log(quests);
-
   return (
     <>
-      <S.Tabs>
-        <S.TabItem>
-          <S.TabBtn>
-            <IconAllQuests />
-            <S.TabTitle>Все квесты</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-
-        <S.TabItem>
-          <S.TabBtn>
-            <IconAdventures />
-            <S.TabTitle>Приключения</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-
-        <S.TabItem>
-          <S.TabBtn>
-            <IconHorrors />
-            <S.TabTitle>Ужасы</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-
-        <S.TabItem>
-          <S.TabBtn>
-            <IconMystic />
-            <S.TabTitle>Мистика</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-
-        <S.TabItem>
-          <S.TabBtn>
-            <IconDetective />
-            <S.TabTitle>Детектив</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-
-        <S.TabItem>
-          <S.TabBtn>
-            <IconScifi />
-            <S.TabTitle>Sci-fi</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-      </S.Tabs>
+      <Tabs questTypes={getAllQuestTypes(quests)}/>
 
       <S.QuestsList>
         {quests.map((item) => {
