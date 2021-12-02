@@ -11,3 +11,13 @@ export const getAllQuestTypes = (allQuests: Quests): (string | undefined)[] => {
 
   return [AppQuestTypes.AllQuests, ...questsFromServer];
 }
+
+export const filterQuestsByType = (allQuests: Quests, questType: string) => {
+  const typeFromServer = questTypes.find((type) => type.typeInApp === questType)?.typeFromServer;
+
+  if (questType === AppQuestTypes.AllQuests) {
+    return allQuests;
+  }
+  
+  return allQuests.filter((quest) => quest.type === typeFromServer);
+}
