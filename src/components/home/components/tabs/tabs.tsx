@@ -34,9 +34,11 @@ function Tabs(props: TabsProps): JSX.Element {
   return (
     <S.Tabs>
 
-      {questTypes.map((item) => {
+      {questTypes.map((item, id) => {
+        const keyValue = `${id}`;
+
         return (
-          <S.TabItem>
+          <S.TabItem key={keyValue}>
             <S.TabBtn>
               {getIcon(item)}
               <S.TabTitle>{item}</S.TabTitle>

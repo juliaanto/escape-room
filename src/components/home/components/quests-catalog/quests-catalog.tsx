@@ -23,9 +23,11 @@ function QuestsCatalog(): JSX.Element {
       <Tabs questTypes={getAllQuestTypes(quests)}/>
 
       <S.QuestsList>
-        {quests.map((item) => {
+        {quests.map((item, id) => {
+          const keyValue = `${id}`;
+
           return (
-            <QuestItem quest={item}/>
+            <QuestItem key={keyValue} quest={item}/>
           )
         })}
       </S.QuestsList>
