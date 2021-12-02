@@ -39,7 +39,7 @@ const TabItem = styled.li`
 
 const TabBtn = styled.button.attrs(props => ({
     type: 'button',
-    isActive: props.isActive
+    isActive: props.isActive,
   }))`
   display: flex;
   align-items: center;

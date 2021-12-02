@@ -64,7 +64,9 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Link = styled(RouterLink).attrs(props => ({
+  isActiveLink: props.isActiveLink,
+}))`
   display: block;
   max-width: 100px;
   font-size: ${({ theme }) => theme.font.semibase};
@@ -75,19 +77,17 @@ const Link = styled(RouterLink)`
 
   color: ${({ theme }) => theme.color.whiteSmoke};
 
+  ${({ isActiveLink }) =>
+    isActiveLink &&
+    css`
+      color: ${({ theme }) => theme.color.tangerine};
+    `}
 
+  &:focus,
+  &:hover {
+    color: ${({ theme }) => theme.color.tangerine};
+  }
 `;
-
-// ${({ $isActiveLink }) =>
-// $isActiveLink &&
-// css`
-//   color: ${({ theme }) => theme.color.tangerine};
-// `}
-
-// &:focus,
-// &:hover {
-// color: ${({ theme }) => theme.color.tangerine};
-// }
 
 const Phone = styled.a`
   margin-top: 17px;

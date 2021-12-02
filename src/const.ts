@@ -60,3 +60,11 @@ export const questLevels = [
     levelInApp: 'сложный',
   },
 ]
+
+export enum MenuItems {
+  Quests = 'Квесты',
+  Beginners = 'Новичкам',
+  Reviews = 'Отзывы',
+  Promotions = 'Акции',
+  Contacts = 'Контакты',
+}
