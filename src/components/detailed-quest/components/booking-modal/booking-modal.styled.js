@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { Button } from 'components/common/common';
 import IconTick from 'assets/img/icon-tick.svg';
+import styled from 'styled-components';
 
 const BlockLayer = styled.div`
   z-index: 10;
@@ -115,7 +115,9 @@ const BookingInput = styled.input`
   }
 `;
 
-const BookingSubmit = styled(Button)`
+const BookingSubmit = styled(Button).attrs(props => ({
+  type: 'submit',
+}))`
   align-self: center;
   margin-top: 55px;
   margin-bottom: 21px;
