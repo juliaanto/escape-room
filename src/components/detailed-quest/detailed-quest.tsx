@@ -10,6 +10,7 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import Loading from 'components/loading/loading';
 import { MainLayout } from '../common/common';
+import NotFound from 'components/not-found/not-found';
 import { Quest } from 'types/quest';
 import { api } from 'services/api';
 import { useParams } from 'react-router';
@@ -29,7 +30,7 @@ function DetailedQuest(): JSX.Element {
   };
 
   if (!quest) {
-    return <Loading />;
+    return <NotFound />;
   }
 
   return (

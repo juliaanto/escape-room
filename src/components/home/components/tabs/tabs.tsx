@@ -11,6 +11,7 @@ import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
 import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
+import { State } from 'types/state';
 import { changeTab } from 'store/action';
 import { useState } from 'react';
 
@@ -18,20 +19,23 @@ type TabsProps = {
   questTypes: (string | undefined)[];
 }
 
+const mapStateToProps = (state: State) => ({
+  tab: state.tab,
+});
+
 const mapDispatchToProps = (dispatch: Dispatch<Actions>) => ({
   onTabClick(item: string) {
     dispatch(changeTab(item));
   },
 });
 
-const connector = connect(null, mapDispatchToProps);
+const connector = connect(mapStateToProps, mapDispatchToProps);
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 type ConnectedComponentProps = PropsFromRedux & TabsProps;
 
 function Tabs(props: ConnectedComponentProps): JSX.Element {
-  const {questTypes, onTabClick} = props;
-  const [activeTab, setActiveTab] = useState(String(AppQuestTypes.AllQuests));
+  const {questTypes, tab, onTabClick} = props;
 
   const getIcon = (questType: string | undefined) => {
     if (questType === AppQuestTypes.AllQuests) {
@@ -61,11 +65,10 @@ function Tabs(props: ConnectedComponentProps): JSX.Element {
             onClick={() => {
               if (item) {
                 onTabClick(item);
-                setActiveTab(item);
               }
             }}
           >
-            <S.TabBtn isActive={item === activeTab}>
+            <S.TabBtn isActive={item === tab}>
               {getIcon(item)}
               <S.TabTitle>{item}</S.TabTitle>
             </S.TabBtn>
