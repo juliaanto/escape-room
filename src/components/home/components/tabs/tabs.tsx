@@ -1,19 +1,35 @@
 import * as S from './quests-catalog.styled';
 
+import {ConnectedProps, connect} from 'react-redux';
+
+import { Actions } from 'types/action';
 import { AppQuestTypes } from 'const';
+import {Dispatch} from 'redux';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
 import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
+import { changeTab } from 'store/action';
 
 type TabsProps = {
   questTypes: (string | undefined)[];
 }
 
-function Tabs(props: TabsProps): JSX.Element {
-  const {questTypes} = props;
+const mapDispatchToProps = (dispatch: Dispatch<Actions>) => ({
+  onTabClick(item: string) {
+    dispatch(changeTab(item));
+  },
+});
+
+const connector = connect(null, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+type ConnectedComponentProps = PropsFromRedux & TabsProps;
+
+function Tabs(props: ConnectedComponentProps): JSX.Element {
+  const {questTypes, onTabClick} = props;
 
   const getIcon = (questType: string | undefined) => {
     if (questType === AppQuestTypes.AllQuests) {
@@ -38,7 +54,14 @@ function Tabs(props: TabsProps): JSX.Element {
         const keyValue = `${id}`;
 
         return (
-          <S.TabItem key={keyValue}>
+          <S.TabItem
+            key={keyValue}
+            onClick={() => {
+              if (item) {
+                onTabClick(item);
+              }
+            }}
+          >
             <S.TabBtn>
               {getIcon(item)}
               <S.TabTitle>{item}</S.TabTitle>
@@ -51,4 +74,5 @@ function Tabs(props: TabsProps): JSX.Element {
   )
 }
 
-export default Tabs;
+export {Tabs};
+export default connector(Tabs);
