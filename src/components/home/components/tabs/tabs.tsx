@@ -12,6 +12,7 @@ import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
 import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import { changeTab } from 'store/action';
+import { useState } from 'react';
 
 type TabsProps = {
   questTypes: (string | undefined)[];
@@ -30,6 +31,7 @@ type ConnectedComponentProps = PropsFromRedux & TabsProps;
 
 function Tabs(props: ConnectedComponentProps): JSX.Element {
   const {questTypes, onTabClick} = props;
+  const [activeTab, setActiveTab] = useState(String(AppQuestTypes.AllQuests));
 
   const getIcon = (questType: string | undefined) => {
     if (questType === AppQuestTypes.AllQuests) {
@@ -59,10 +61,11 @@ function Tabs(props: ConnectedComponentProps): JSX.Element {
             onClick={() => {
               if (item) {
                 onTabClick(item);
+                setActiveTab(item);
               }
             }}
           >
-            <S.TabBtn>
+            <S.TabBtn isActive={item === activeTab}>
               {getIcon(item)}
               <S.TabTitle>{item}</S.TabTitle>
             </S.TabBtn>

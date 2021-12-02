@@ -37,7 +37,10 @@ const TabItem = styled.li`
   }
 `;
 
-const TabBtn = styled.button.attrs({ type: 'button' })`
+const TabBtn = styled.button.attrs(props => ({
+    type: 'button',
+    isActive: props.isActive
+  }))`
   display: flex;
   align-items: center;
   padding: 0;
@@ -61,6 +64,14 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
   &:hover span {
     border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
   }
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      span {
+        border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
+      }
+    `}
 `;
 
 const TabTitle = styled.span`

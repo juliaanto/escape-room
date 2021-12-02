@@ -1,6 +1,6 @@
 import * as S from './detailed-quest.styled';
 
-import { getQuestLevel, getQuestType } from 'utils/quests';
+import { getAppQuestType, getQuestLevel, } from 'utils/quests';
 import { useEffect, useState } from 'react';
 
 import { APIRouteQuestById } from 'const';
@@ -44,7 +44,7 @@ function DetailedQuest(): JSX.Element {
         <S.PageContentWrapper>
           <S.PageHeading>
             <S.PageTitle>{quest.title}</S.PageTitle>
-            <S.PageSubtitle>{getQuestType(quest.type)}</S.PageSubtitle>
+            <S.PageSubtitle>{getAppQuestType(quest.type)}</S.PageSubtitle>
           </S.PageHeading>
 
           <S.PageDescription>
