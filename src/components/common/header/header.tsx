@@ -20,7 +20,7 @@ function Header(): JSX.Element {
             <S.LinkItem>
               <S.Link
                 to={AppRoute.Home}
-                isActiveLink={activeMenuItem === MenuItems.Quests}
+                $isActiveLink={activeMenuItem === MenuItems.Quests}
                 onClick={() => setActiveMenuItem(MenuItems.Quests)}
               >
                 {MenuItems.Quests}
@@ -30,7 +30,7 @@ function Header(): JSX.Element {
             <S.LinkItem>
               <S.Link
                 to="#"
-                isActiveLink={activeMenuItem === MenuItems.Beginners}
+                $isActiveLink={activeMenuItem === MenuItems.Beginners}
                 onClick={() => setActiveMenuItem(MenuItems.Beginners)}
               >
                 {MenuItems.Beginners}
@@ -40,7 +40,7 @@ function Header(): JSX.Element {
             <S.LinkItem>
               <S.Link
                 to="#"
-                isActiveLink={activeMenuItem === MenuItems.Reviews}
+                $isActiveLink={activeMenuItem === MenuItems.Reviews}
                 onClick={() => setActiveMenuItem(MenuItems.Reviews)}
               >
                 {MenuItems.Reviews}
@@ -50,7 +50,7 @@ function Header(): JSX.Element {
             <S.LinkItem>
               <S.Link
                 to="#"
-                isActiveLink={activeMenuItem === MenuItems.Promotions}
+                $isActiveLink={activeMenuItem === MenuItems.Promotions}
                 onClick={() => setActiveMenuItem(MenuItems.Promotions)}
               >
                 {MenuItems.Promotions}
@@ -60,7 +60,7 @@ function Header(): JSX.Element {
             <S.LinkItem>
               <S.Link
                 to={AppRoute.Contacts}
-                isActiveLink={activeMenuItem === MenuItems.Contacts}
+                $isActiveLink={activeMenuItem === MenuItems.Contacts}
                 onClick={() => setActiveMenuItem(MenuItems.Contacts)}
               >
                 {MenuItems.Contacts}

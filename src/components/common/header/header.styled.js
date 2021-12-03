@@ -64,8 +64,8 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink).attrs(props => ({
-  isActiveLink: props.isActiveLink,
+const Link = styled(RouterLink).attrs(({$isActiveLink}) => ({
+  $isActiveLink: $isActiveLink,
 }))`
   display: block;
   max-width: 100px;
@@ -77,8 +77,8 @@ const Link = styled(RouterLink).attrs(props => ({
 
   color: ${({ theme }) => theme.color.whiteSmoke};
 
-  ${({ isActiveLink }) =>
-    isActiveLink &&
+  ${({ $isActiveLink }) =>
+    $isActiveLink &&
     css`
       color: ${({ theme }) => theme.color.tangerine};
     `}
