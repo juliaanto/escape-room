@@ -13,7 +13,6 @@ import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import { State } from 'types/state';
 import { changeTab } from 'store/action';
-import { useState } from 'react';
 
 type TabsProps = {
   questTypes: (string | undefined)[];
