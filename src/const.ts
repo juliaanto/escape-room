@@ -68,3 +68,9 @@ export enum MenuItems {
   Promotions = 'Акции',
   Contacts = 'Контакты',
 }
+
+export const CONTACT_ADDRESS = {
+  lat: 59.968322,
+  lng: 30.317359,
+  zoom: 16,
+}
