@@ -34,11 +34,10 @@ function QuestsCatalog(props: PropsFromRedux): JSX.Element {
       <Tabs questTypes={getAllQuestTypes(quests)}/>
 
       <S.QuestsList>
-        {filteredQuests.map((item, id) => {
-          const keyValue = `${id}`;
+        {filteredQuests.map((item) => {
 
           return (
-            <QuestItem key={keyValue} quest={item}/>
+            <QuestItem key={item.id} quest={item}/>
           )
         })}
       </S.QuestsList>

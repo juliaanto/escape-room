@@ -60,7 +60,7 @@ function Tabs(props: ConnectedComponentProps): JSX.Element {
 
         return (
           <S.TabItem
-            key={keyValue}
+            key={`tab-${keyValue}`}
             onClick={() => {
               if (item) {
                 onTabClick(item);
