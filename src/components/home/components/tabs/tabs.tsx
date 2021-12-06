@@ -1,4 +1,4 @@
-import * as S from './quests-catalog.styled';
+import * as S from './tabs.styled';
 
 import {ConnectedProps, connect} from 'react-redux';
 
