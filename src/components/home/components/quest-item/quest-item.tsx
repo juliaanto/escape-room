@@ -18,7 +18,7 @@ function QuestItem(props: QuestItemProps): JSX.Element {
       <S.QuestItemLink to={LinkToQuestById(quest.id)}>
         <S.Quest>
           <S.QuestImage
-            src={`../${quest.coverImg}`}
+            src={`${process.env.PUBLIC_URL}/${quest.coverImg}`}
             width="344"
             height="232"
             alt={`квест ${quest.title}`}

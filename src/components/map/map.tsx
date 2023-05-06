@@ -19,7 +19,7 @@ function Map(props: MapProps): JSX.Element {
   const map = useMap(mapRef, address);
 
   const defaultIcon = leaflet.icon({
-    iconUrl: '../icons/marker-icon.png',
+    iconUrl: `${process.env.PUBLIC_URL}/icons/marker-icon.png`,
     iconSize: [48, 62],
     iconAnchor: [24, 62],
   });

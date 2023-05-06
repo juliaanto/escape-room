@@ -36,7 +36,7 @@ function DetailedQuest(): JSX.Element {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src={`../${quest.coverImg}`}
+          src={`${process.env.PUBLIC_URL}/${quest.coverImg}`}
           alt={`Квест ${quest.title}`}
           width="1366"
           height="768"
