@@ -14,7 +14,7 @@ The data is loaded from a server, which is run with `npm run start:server` (or `
 
 
 ## Сomposition
-- Fetching data from the server and displaying it on the main page and the quest page
+- Fetching data from the server and displaying it on the main page and the quest info page
 - Filtering the list of quests by genre
 - Interactive map
 - Quest booking form
