@@ -3,7 +3,7 @@ Escape room is a site for booking quests in Saint Petersburg.
 
 
 ## General Information
-The data is loaded from a server that is started with the `npm run start:server` command or `npm run start` to run two applications in parallel. Server is available at [localhost:3001](http://localhost:3001).
+The data is loaded from a server, which is run with `npm run start:server` (or `npm run start` to run two applications in parallel). The server is available at `localhost:3001`.
 
 
 ## Technologies Used
