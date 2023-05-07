@@ -1,80 +1,32 @@
-## Скрипты
-
-В проекте, можно использовать следующие скрипты
-
-### `npm run start:eslint`
-
-Запускает проверку прохождения проекта на eslint.
-
-Если есть ошибки или предупреждения, они выведутся в консоли после завершения выполнения команды.
-
-### `npm run start:client`
-
-Запускает **клиентскую** часть приложение в режиме разработки.
-
-Откройте [http://localhost:3000](http://localhost:3000) чтобы просмотреть его в браузере.
-
-Страница перезагрузится, если вы внесете правки.
-
-Вы также увидите любые ошибки линтера в консоли.
-
-### `npm run start:server`
-
-Запускает **серверную** часть приложения, с которой можно получить данные для разработки клиентского приложения. Доступно на [http://localhost:3001](http://localhost:3001)
-
-### `npm run start`
-
-Запускает клиентскую и серверную часть приложения в *одной* консоли, параллельно.
-
-### `npm run build`
-
-Собирает **клиентскую** часть приложение в папку `build`.
-
-Сборка минифицирована, а имена файлов включают хеши.
+# Escape room
+Escape room is a site for booking quests in Saint Petersburg.
 
 
-## Сервер
+## General Information
+The data is loaded from a server that is started with the `npm run start:server` command or `npm run start` to run two applications in parallel. Server is available at [localhost:3001](http://localhost:3001).
 
-После запуска команды `npm run start:server` (или `npm run start` для запуска двух приложений параллельно), сервер доступн по пути [http://localhost:3001](http://localhost:3001).
 
-### Структуры данных
+## Technologies Used
+- TypeScript
+- React
+- Redux
+- Leaflet
 
-#### Quest
 
-```json
-{
-  "id": 1,
-  "title": "Склеп",
-  "description": "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
-  "previewImg": "img/preview-sklep.jpg",
-  "coverImg": "img/cover-sklep.jpg",
-  "type": "horror",
-  "level": "hard",
-  "peopleCount": [2, 5],
-  "duration": 120
-}
+## Сomposition
+- Fetching data from the server and displaying it on the main page and the quest page
+- Filtering the list of quests by genre
+- Interactive map
+- Quest booking form
+
+
+## How to run
+To clone and run this application:
+
 ```
-
-#### OrderPost
-
-```json
-{
-  "name": "Jon Vek",
-  "peopleCount": 1,
-  "phone": "7000000000",
-  "isLegal": true
-}
+git clone https://github.com/juliaanto/escape-room.git
+cd escape-room
+npm install
+npm start
 ```
-
-### Список роутов:
-
-- **GET** /quests — получить список квестов.
-
-- **GET** http://localhost:3001/quests/1 — получить квест c идентификатором `id`.
-
-- **POST** http://localhost:3001/orders — отправить новый заказ.
-
-
-## Время выполнения
-
-На реализацию проекта ушло 18 часов.
+The application will be available at [localhost:3000](http://localhost:3000).
